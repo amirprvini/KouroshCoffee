@@ -1,6 +1,7 @@
 import { subMenu } from "./subMenu.type"
 
 export interface CardType {
-    title: string 
+    title: string ,
+    id : number ,
     menu : subMenu[]
 }

@@ -15,15 +15,18 @@ const Header: React.FC<HeaderProps> = (): JSX.Element =>{
         console.log("param: " , currentPath) ;
     },[])
 
-  return <div className='headerWrapper w-full flex justify-around items-center shaddow-md h-40 bg-neutral-100 shadow-md'>
+  return <div className='headerWrapper w-full flex justify-around items-center shaddow-md h-40 bg-white shadow-md'>
+        
         <ul className="headerButtonsList w-full flex justify-around">
             {ButtonsData.map((item,index)=>{
                 return <li key={index}> <HeaderButton isClickedProp={currentPath === item.navigateTo ? true : false} title={item.title} navigateProp={item.navigateTo} /> </li>
             })}
         </ul>
+
         <div className="logoWrapper">
             <img src="./images/kouroshLogo.png" alt="kouroshLogo" />
         </div>
+
   </div>
 }
 
