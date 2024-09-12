@@ -16,6 +16,10 @@ module.exports = {
       'dana' : ["dana","sans"] ,
       'Vazirmatn' : ["Vazirmatn","sans"]
     },
+
+    backgroundImage: {
+        'KouroshBackGround': "url('https://lotusgr.com/wp-content/uploads/2024/08/CY3A7576.jpg')",
+       }
     
     },
   },

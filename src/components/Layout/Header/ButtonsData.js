@@ -1,6 +1,10 @@
 export const ButtonsData = [
     
     {
+        title:"خانه" , 
+        navigateTo: "/" 
+    },
+    {
         title:"منوی سفارش" , 
         navigateTo: "/order" 
     },

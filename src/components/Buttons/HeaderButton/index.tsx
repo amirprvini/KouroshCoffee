@@ -18,7 +18,7 @@ const HeaderButton:React.FC<HeaderButtonProps> = ({title,navigateProp,isClickedP
     }
 
   return <div className={`headerButtonWrapper ${isClickedProp && 'border-b-black border-b-4'} py-2 transition-all duration-75`}>
-        <button className='headerButton font-dana text-xl sm:text-2xl lg:text-3xl ' onClick={()=>{handleClick(navigateProp)}}> {title} </button>
+        <button className='headerButton font-iranyekan text-xl sm:text-2xl lg:text-3xl ' onClick={()=>{handleClick(navigateProp)}}> {title} </button>
   </div>
   
 }

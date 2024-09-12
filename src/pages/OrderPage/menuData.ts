@@ -124,12 +124,6 @@ export const menuData: CardType[] = [
                 isLast : false
             },
             {
-                title : '65000' , 
-                recipe : '' ,
-                price : '98000',
-                isLast : false
-            },
-            {
                 title : 'چای دمی' , 
                 recipe : '' ,
                 price : '50000',
