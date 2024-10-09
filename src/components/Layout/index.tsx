@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 interface LayOutProps {}
 
 const LayOut: React.FC<LayOutProps> = (): JSX.Element => {
-  return <div className='layOutWrapper flex flex-col items-center'>
+  return <div className='layOutWrapper flex flex-col justify-between items-center h-full'>
         <Header/>
         <Outlet/>
         <Footer/>

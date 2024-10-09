@@ -16,13 +16,12 @@ export const ButtonsData = [
         title:"ایونت ها" , 
         navigateTo: "/events" 
     },
-    {
-        title:"درباره ما" , 
-        navigateTo: "/about" 
-    },
-    {
-        title:"ارتباط با ما" , 
-        navigateTo: "/contact" 
-    },
-    
+    // {
+    //     title:"درباره ما" , 
+    //     navigateTo: "/about" 
+    // },
+    // {
+    //     title:"ارتباط با ما" , 
+    //     navigateTo: "/contact" 
+    // },
 ]

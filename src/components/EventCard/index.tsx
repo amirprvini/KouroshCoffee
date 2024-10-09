@@ -1,24 +1,26 @@
-import React from 'react'
+import React, { forwardRef, useRef } from 'react'
 import { FaRegClock } from "react-icons/fa";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
-interface EventCardProps {
+interface EventCardProps extends React.PropsWithRef<any> {
     eventTitleProp?: string ,
     eventAvatarUrl ?: string ,
     presentByProp?: string , 
     eventDateProp?: string ,
     eventTimeProp?: string ,
-    eventLocProp?: string 
+    eventLocProp?: string ,
+    onClickProp : ()=> void
 }
 
-const EventCard: React.FC<EventCardProps> = 
-({eventAvatarUrl='./images/Kourosh-RoofGarden-2.jpg',eventTitleProp='-------',eventDateProp='-------',eventLocProp='-------',eventTimeProp='-------',presentByProp='-------'}): JSX.Element => {
-  return <div className='eventCardWrapper bg-white border border-neutral-200 rounded-md shadow-lg flex flex-col gap-1'>
+const EventCard: React.FC<EventCardProps> = forwardRef(
+({eventAvatarUrl='',eventTitleProp='-------',eventDateProp='-------',eventLocProp='-------',eventTimeProp='-------',presentByProp='-------',onClickProp},ref:any): JSX.Element => {
+
+  return <div className='eventCardWrapper bg-white border border-neutral-200 rounded-md shadow-lg flex flex-col gap-1' onClick={onClickProp}>
         
         <div className="eventCardImgWrapper px-2 py-3">
-            <img src={eventAvatarUrl} alt="eventPhoto" width={'400px'} />
+            <img src='./images/Kourosh-RoofGarden-2.jpg' alt="eventPhoto" width={'400px'} ref={ref}/>
         </div>
 
         <div className="eventCardTitleWrapper px-2 py-3 w-full flex justify-center font-iranyekan">
@@ -66,6 +68,6 @@ const EventCard: React.FC<EventCardProps> =
 
 
   </div>
-}
+})
 
 export default EventCard

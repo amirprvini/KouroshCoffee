@@ -1,11 +1,12 @@
 import React from 'react'
+import FooterButton from '../../Buttons/FooterButton'
 
 interface FooterProps {}
 const Footer: React.FC<FooterProps> = (): JSX.Element => {
   return <div className='bg-black text-white w-full px-2 py-1 h-min flex flex-col gap-3 justify-center items-center'>
 
     <div className="logoWrapper w-full flex justify-center">
-      <img src="./images/kouroshLogo2.png" alt="footerLogo" width='150px' />
+      <img src="./images/kouroshLogo.png" alt="footerLogo" width='400px'/>
     </div>
     <div className="madeByWrapper">
         <h2 className="madeBy font-dana text-lg sm:text-xl lg:text-2xl">طراحی و اجرا توسط امیر پروینی</h2>
