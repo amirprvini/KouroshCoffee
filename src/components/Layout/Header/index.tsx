@@ -5,9 +5,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import MobileNavBar from '../../MobileNavBar';
 import LoginButton from '../../Buttons/LoginButton';
 import ShoppingCartButton from '../../Buttons/ShoppingCartButton';
+import { useRef } from 'react';
 
 interface HeaderProps {}
 const Header: React.FC<HeaderProps> = (): JSX.Element =>{
+
+    const ref = useRef<any>();
 
     const location = useLocation(); 
     const currentPath = location.pathname;
@@ -34,17 +37,18 @@ const Header: React.FC<HeaderProps> = (): JSX.Element =>{
         loginNavigate('/login')
     }
 
-  return <div className='headerWrapper w-full flex-col gap-2 sticky top-0 z-10'>
+
+  return <div className={`headerWrapper w-full flex-col gap-2 sticky top-0 z-10 ${currentPath === '/login' ? 'hidden' : ''} `}>
         
     <div className="laptopNav pr-4 border-b border-neutral-400 lg:px-4 flex justify-between lg:justify-around items-center shaddow-md h-32 bg-white shadow-md sticky top-0">
 
-        <ul className="headerButtonsList hidden w-2/5 lg:flex justify-between px-12">
+        <ul className="headerButtonsList font-bold lg:font-semibold hidden w-2/5 md:flex justify-between xl:px-2">
             {ButtonsData.map((item,index)=>{
                 return <li key={index}> <HeaderButton isClickedProp={currentPath === item.navigateTo ? true : false} title={item.title} navigateProp={item.navigateTo} onClickProp={()=>{}} /> </li>
             })}
         </ul>
 
-        <div className="burgurButtonWrapper cursor-pointer lg:hidden w-2/5 flex justify-start text-4xl" onClick={handleBurgerButton}>
+        <div className="burgurButtonWrapper cursor-pointer md:hidden w-2/5 flex justify-start text-4xl" onClick={handleBurgerButton}>
             <RxHamburgerMenu />
         </div>
 
@@ -52,15 +56,18 @@ const Header: React.FC<HeaderProps> = (): JSX.Element =>{
             <img src="./images/kouroshLogo2.png" alt="kouroshLogo" width='100px'/>
         </div>
 
-        <div className="userButtonsWrapeer w-2/5 flex gap-10 justify-end px-10">
-            <LoginButton onClickProp={handleLoginButton} />
+        <div className="userButtonsWrapeer w-2/5 flex items-center gap-1 justify-end px-2 sm:px-4 md:px-8" ref={ref}>
+            <LoginButton variant='primary' onClick={handleLoginButton} />
             <ShoppingCartButton />
         </div>
 
     </div>
 
         <div className={`mobileNav transition-all duration-200 w-full fixed -top-96`}>
-            <MobileNavBar closeButtonProp={()=>{ handleBurgerButton() }} onComplete={()=>{handleBurgerButton()}} />
+            <MobileNavBar loginButtonFunc={()=>{
+                handleBurgerButton()
+                handleLoginButton()
+            }} closeButtonProp={()=>{ handleBurgerButton() }} onComplete={()=>{handleBurgerButton()}} />
         </div>
 
   </div>

@@ -1,0 +1,430 @@
+
+
+$(document).ready(function () {
+
+	const gap = 16;
+
+	const carousel = document.getElementById("carousel"),
+		content = document.getElementById("content"),
+		next = document.getElementById("next"),
+		prev = document.getElementById("prev");
+
+	setInterval(function () {
+		next.click();
+	}, 3000);
+
+	//setInterval(function () {
+	//	next.addEventListener("click", e => {
+	//		carousel.scrollBy(width + gap, 0);
+	//		if (carousel.scrollWidth !== 0) {
+	//			prev.style.display = "flex";
+	//		}
+	//		if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+	//			next.style.display = "none";
+	//		}
+	//	});
+	//}, 2000);
+	//prev.addEventListener("click", e => {
+	//	carousel.scrollBy(-(width + gap), 0);
+	//	if (carousel.scrollLeft - width - gap <= 0) {
+	//		prev.style.display = "none";
+	//	}
+	//	if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+	//		next.style.display = "flex";
+	//	}
+	//});
+
+	let width = carousel.offsetWidth;
+	window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+	
+
+    // Get the current position on load
+//    for (var i = 0; i < $('.scrollTo').length; i++) {
+//        var elm = $('.scrollTo')[i];
+//			
+//        if ($(document).scrollTop() >= $(elm).offset().top) {
+//            currentPos = i;
+//        }
+//    }
+//
+//    $(document).bind('DOMMouseScroll', function(e) {
+//        if (e.originalEvent.detail > 0) {
+//            scrollDown();
+//        } else {
+//            scrollUp();
+//        }
+//        return false;
+//    });
+//
+//    $(document).bind('mousewheel', function(e) {
+//        if (e.originalEvent.wheelDelta < 0) {
+//            scrollDown();
+//        } else {
+//            scrollUp();
+//        }
+//        return false;
+//    });
+//
+//    $(document).bind('keydown', function(e) {
+//        if (e.which === 40) {
+//            scrollDown();
+//        } else if (e.which === 34) {
+//            scrollDown();
+//        } else if (e.which === 33) {
+//            scrollUp();
+//        } else if (e.which === 38) {
+//            scrollUp();
+//        } else if (e.which === 36) {
+//            scrollToHome();
+//        } else if (e.which === 35) {
+//            scrollToEnd();
+//        }
+//        return false;
+//    });
+	
+	
+	/* 
+	
+		This code will determine the position of scroller
+		and if on scrolling up, the user reaches the second or third header, the headers will fade in
+	
+	*/
+	
+	var lastScrollTop = 0;
+	var header2pos = document.getElementById('header2').getBoundingClientRect();
+	var header3pos = document.getElementById('header3').getBoundingClientRect();
+	
+	/* 
+		Create a range in case, so as user enters this range, the event triggers 
+		
+		with no range, if you scroll too fast, event might not fire
+	*/
+	
+	function range(start, end) {
+		let range = [];
+		for (let i = start; i <= end; i++) {
+			range.push(i);
+		}
+		return range;
+	}
+
+	window.addEventListener("scroll", function(){
+		 var st = window.pageYOffset || document.documentElement.scrollTop;
+		 if (st < lastScrollTop && range(-70, 70).includes(header2pos.bottom)){
+				$('#header2').css({
+					'opacity': '100%',
+					'display': 'flex'
+				});
+		 } else if (st < lastScrollTop && range(-70, 70).includes(header3pos.bottom)) {
+			 $('#header3').css({
+					'opacity': '100%',
+					'display': 'flex'
+				});
+		 	} 
+		 if (header2pos.bottom < 0) {
+		 $('#header2').css({
+				'opacity': '0%',
+				'display': 'flex'
+				});
+			}
+
+		if (header3pos.bottom < 0) {
+		 $('#header3').css({
+				'opacity': '0%',
+				'display': 'flex'
+				});
+			}
+		
+		if (window.pageYOffset < 50) {
+		 $('#header3, #header2').css({
+				'opacity': '0%',
+				'display': 'flex'
+				});
+			}
+		
+		// Update the relative position of headers
+		
+		header2pos = document.getElementById('header2').getBoundingClientRect();
+		header3pos = document.getElementById('header3').getBoundingClientRect();
+		
+		 lastScrollTop = st <= 0 ? 0 : st;
+		}, false);
+	
+		/* 
+		
+			Header fade in code finishes here
+		
+		*/
+	
+		// RESPONSIVE SCRIPTS
+			// TODO this has to be removed entirely
+		var responsive = setInterval(function(){
+				screenWidth = $(window).width();
+					
+				if(screenWidth <= 768) {
+					$(`.mobile_hidden`).css({
+						'visibility': 'hidden',
+						'display': 'none'
+					});
+					
+					$(`.desktop_hidden`).css({
+						'visibility': 'visible',
+						'display': 'block'
+					});
+					} else {
+						// FOR WHEN SCREEN RESIZES TO LARGE AGAIN
+						
+						$('.mobile_hidden').css({
+							'visibility': 'visible',
+							'display': 'block'
+						});
+						
+						$(`.desktop_hidden`).css({
+							'visibility': 'hidden',
+							'display': 'none'
+						});
+					}
+		}, 10);
+	
+		// End of Responsive Scripts
+	
+	$('#mobile_more_projects_link').click(function(event){
+		event.preventDefault();
+		
+		$('.mobile_more_figure, .our_projects_second_figs').css({
+			'height': '100%',
+			'overflow': 'normal'
+		});
+		
+		$('#mobile_more_projects_link').css('display', 'none');
+	});
+});
+
+//var scrolling = false;
+//var currentPos = 0;
+//
+//function scrollUp() {
+//    if (!scrolling && currentPos > 0) {
+//        scrolling = true;
+//        currentPos--;
+//        var scrollToElement = $('.scrollTo')[currentPos];
+//
+//        $('html, body').animate({
+//            scrollTop: $(scrollToElement).offset().top
+//        }, 1000, function() {
+//            scrolling = false;
+//        });
+//    }
+//}
+//
+//function scrollToHome() {
+//    if (!scrolling && currentPos > 0) {
+//        scrolling = true;
+//        currentPos = 0;
+//        var scrollToElement = $('.scrollTo')[currentPos];
+//
+//        $('html, body').animate({
+//            scrollTop: $(scrollToElement).offset().top
+//        }, 1000, function() {
+//            scrolling = false;
+//        });
+//    }
+//}
+//
+//function scrollToEnd() {
+//    if (!scrolling) {
+//        scrolling = true;
+//        currentPos = 3;
+//        var scrollToElement = $('.scrollTo')[currentPos];
+//
+//        $('html, body').animate({
+//            scrollTop: $(scrollToElement).offset().top
+//        }, 1000, function() {
+//            scrolling = false;
+//        });
+//    }
+//}
+//
+//function scrollDown() {
+//    if (!scrolling && currentPos < $('.scrollTo').length - 1) {
+//        scrolling = true;
+//        currentPos++;
+//        var scrollToElement = $('.scrollTo')[currentPos];
+//
+//        $('html, body').animate({
+//            scrollTop: $(scrollToElement).offset().top
+//        }, 1000, function() {
+//            scrolling = false;
+//        });
+//    }
+//}
+//-----------------end------------------------//
+
+
+// Carousel Script
+
+$(function() {
+	let currentSlide = 1;
+	let currentSlideNumberID = $('#slider-current-number');
+	
+	$('#lg-carousel-next-button').click(function(event){
+		event.preventDefault();
+		slide(currentSlide);
+	});
+	
+	// Handle auto animation for slider
+	function autoSliderAnimation() {
+		//start auto sliding on load
+		window.onload = function() {
+			//start auto sliding with a delay
+			setTimeout(function(){
+				setInterval(function(){
+					slide(currentSlide);
+				}, 20000);
+			}, 5000);
+		}
+	}
+	//call the function for auto sliding
+	autoSliderAnimation();
+	
+	
+	//Functions
+	function slide(num) {
+		switch(num) {
+			case 1:
+				currentSlide = 2;
+				
+				$(`#carousel_item_1 h3`).css({
+					'opacity': '0',
+					'top': '3rem'
+				});
+				
+				$(`#carousel_item_1 .carousel_text`).css({
+					'opacity': '0',
+					'left': '10rem'
+				});
+				
+				setTimeout(function(){
+					$(`#carousel_item_1`).css({
+						'display': 'none',
+						'margin-left': '0'
+					});
+					$(`#carousel_item_2`).css('display', 'block');
+				}, 300);
+				
+				$(`#carousel_item_2`).css('opacity', '100%');
+				
+				$(`#carousel_item_2 h3`).css({
+					'opacity': '100%',
+					'top': '0'
+				});
+				
+				$(`#carousel_item_2 .carousel_text`).css({
+					'opacity': '100%',
+					'left': '0'
+				});
+				
+				currentSlideNumberID.attr('src', '/Content/images/slider/rec_w_2.svg');
+				break;
+			case 2:	
+				currentSlide = 3;
+				
+				$(`#carousel_item_2 h3`).css({
+					'opacity': '0',
+					'top': '3rem'
+				});
+				
+				$(`#carousel_item_2 .carousel_text`).css({
+					'opacity': '0',
+					'left': '10rem'
+				});
+				
+				setTimeout(function(){
+					$(`#carousel_item_2`).css({
+						'display': 'none',
+						'margin-left': '0'
+					});
+					$(`#carousel_item_3`).css('display', 'block');
+				}, 300);
+				
+				$(`#carousel_item_3`).css('opacity', '100%');
+				
+				$(`#carousel_item_3 h3`).css({
+					'opacity': '100%',
+					'top': '0'
+				});
+				
+				$(`#carousel_item_3 .carousel_text`).css({
+					'opacity': '100%',
+					'left': '0'
+				});
+				
+				currentSlideNumberID.attr('src', '/Content/images/slider/rec_w_3.svg');
+				break;
+			case 3:	
+				currentSlide = 1;
+				
+				$(`#carousel_item_3 h3`).css({
+					'opacity': '0',
+					'top': '3rem'
+				});
+				
+				$(`#carousel_item_3 .carousel_text`).css({
+					'opacity': '0',
+					'left': '10rem'
+				});
+				
+				setTimeout(function(){
+					$(`#carousel_item_3`).css({
+						'display': 'none',
+						'margin-left': '0'
+					});
+					$(`#carousel_item_1`).css('display', 'block');
+				}, 300);
+				
+				$(`#carousel_item_1`).css('opacity', '100%');
+				
+				$(`#carousel_item_1 h3`).css({
+					'opacity': '100%',
+					'top': '0'
+				});
+				
+				$(`#carousel_item_1 .carousel_text`).css({
+					'opacity': '100%',
+					'left': '0'
+				});
+				
+				currentSlideNumberID.attr('src', '/Content/images/slider/rec_w_1.svg');
+				break;	
+		}
+	}
+});
+
+// HTML Content
+
+var mobileSliderHTML = `
+                    <div class="" id="">
+                        <h3>
+                            <img src="images/service-blank-white3.svg" alt="" width="8%">
+                            <span class="text_hollow">SERVICES & SOLUTIONS</span>
+                        </h3>
+                    </div>
+                    <span class=""></span>
+                    <div class="mobile-slider-line" id="">
+                        <h3>
+                            <img src="images/industry-white.svg" alt="" width="8%">
+                            <span class="text-wrapper">
+                                <span id="mobile_slider_title" class="text_white">INDUSTRIES</span>
+                            </span>
+                        </h3>
+                        <p class="text_white" id="mobile_slider_text">
+                            Kanda Idea, over these years, experiences many industries and conquer domains field by field and practice a wide range of territory. Kandaidea has started its journey from oil, gas, and petrochemical industry and then continues in GIS & Geomatics and now
+                            cruising in maritime and ship tracking.
+                        </p>
+                        <a id="mobile_slider_link" href="industries.html">
+                            More info >
+                        </a>
+                    </div>`;
+
+

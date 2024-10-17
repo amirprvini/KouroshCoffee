@@ -1,0 +1,34 @@
+/* CSS for dont miss job section */
+
+.miss_job {
+	margin: auto;
+	margin-top: 15rem;
+	margin-bottom: 15rem;
+}
+
+.miss_job p {
+	color: #000;
+	text-align: center;
+	line-height: 1.1;
+	font-size: clamp(2.278rem, 2.035vw + 1.057rem, 3.906rem);
+}
+
+.miss_job a {
+	display: block;
+	margin: auto;
+	text-decoration: none;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	width: 18rem;
+	height: 4.2rem;
+	text-align: center;
+	background: #0000ff;
+	color: #fff;
+	transition: background 300ms;
+	text-transform: uppercase;
+	line-height: 1.3;
+}
+
+.miss_job a:hover {
+	background: #007bff;
+}

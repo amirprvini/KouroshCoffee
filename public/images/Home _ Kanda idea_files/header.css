@@ -1,0 +1,624 @@
+/*This file is for header and menu components*/
+
+/*		Logo		*/
+
+.kanda_logo {
+    margin: 6rem 0 0 6.5rem;
+    width: 30rem;
+    min-width: 20rem;
+    cursor: pointer;
+}
+
+.second_logo {
+    width: 10rem !important;
+    min-width: 5rem !important;
+    margin: 4rem 0 0 6.5rem !important;
+}
+
+.header_logo_container {
+    width: 36rem;
+    position: absolute;
+    cursor: auto;
+    z-index: 1;
+}
+
+/*		Language		*/
+
+.header_language_container {
+    transition: 300ms;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    position: relative;
+    top: .2rem;
+}
+
+.header_language_container_mobile {
+    display: none;
+}
+
+.menu_language_text {
+    display: none;
+    color: white;
+}
+
+.language_text {
+    margin-top: auto;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    .language_text a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+.language_text_black {
+    margin-top: auto;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    top: -.5rem;
+}
+
+    .language_text_black a {
+        text-decoration: none;
+        color: #000;
+    }
+
+.language_text:not(a) {
+    cursor: default;
+}
+
+.language_disabled {
+    color: #808080 !important;
+    margin: 0 1rem;
+    cursor: default;
+}
+
+/*		Join Us		*/
+
+.join_us_magnifier {
+    margin: 8rem 3rem 0 0;
+}
+
+/*		Menu		*/
+
+.menu_button {
+    margin: 8rem 8rem 0 0;
+    cursor: pointer;
+    z-index: 999;
+    position: relative;
+}
+
+.menu_button_black {
+    margin-top: 7.5rem;
+    z-index: 999;
+}
+
+
+
+/* 		Fixed Menu, Opened		 */
+
+.menu_content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left : 45%;
+/*    left: 50%;
+*/    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mobile_menu_content {
+    display: none;
+}
+
+.menu-title {
+    color: #001cff;
+    !important;
+}
+
+.drop_down:hover {
+    cursor: pointer;
+}
+
+#fixed_menu {
+    position: fixed;
+    padding: 0 !important;
+    margin-left: -2rem;
+    width: 101%;
+    height: 100%;
+    background: #000;
+    z-index: 999;
+/*    overflow-y: hidden;
+*/    top: 0;
+    display: none;
+    min-height: 50rem;
+    transition: background 300ms;
+}
+
+    #fixed_menu .menu_button {
+        margin: 7rem 9.5rem 0 0;
+    }
+
+    #fixed_menu .kanda_logo {
+        margin: 6rem 0 0 8.5rem;
+    }
+
+    #fixed_menu .join_us_magnifier {
+        margin-right: 2.1rem;
+       
+    }
+
+    #fixed_menu .header_language_container {
+        position: relative;
+        top: -1.2rem;
+        left: 1rem;
+    }
+
+.menu_open_image {
+    margin-top: 10rem;
+    margin-left : 14rem;
+/*    margin-left: 8rem;
+*/    height: 35rem;
+/*    float: right;
+*/
+float : left;
+}
+
+.menu_second_image {
+    margin-top: 9rem;
+/*    float: right;
+*/    margin-left: 8rem;
+}
+
+.drop_down {
+    margin-top: 9rem;
+/*    float: right;
+*/    margin-right: 0;
+    padding: 0rem;
+    list-style-type: none;
+}
+
+    .drop_down a {
+        text-decoration: none;
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: 'DINNextLTPro-Bold', 'Arial', sans-serif;
+        color: #fff;
+        transition: margin, 300ms;
+        padding-left: 50px;
+    }
+
+        .drop_down a:hover {
+            margin-left: 1rem;
+        }
+
+    .drop_down li {
+        margin-bottom: 1.5rem;
+    }
+
+        .drop_down li a {
+            white-space: nowrap;
+        }
+
+.social_media_container {
+    position: absolute;
+    bottom: 0;
+    margin-left: 9.5rem;
+}
+
+    .social_media_container a:not(.fa-website, .language_disabled) {
+        font-size: 3rem;
+        color: #fff;
+        display: flex;
+        text-decoration: none;
+    }
+
+    .social_media_container span {
+        vertical-align: bottom;
+        color: #fff;
+        border-radius: .6rem;
+        padding: .5rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        font-family: 'DINNextLTPro-Light', Arial, sans-serif;
+        font-size: 1.6rem;
+        cursor: default;
+        position: relative;
+        top: 0.1rem;
+    }
+
+#fixed_menu .aparat, #aparat {
+    content: url("../../images/aparat_white.svg");
+    position: relative;
+    top: .4rem;
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.aparat_b {
+    content: url("../../images/aparat.svg");
+    position: relative;
+    top: -1.6rem;
+    width: 2.5rem;
+    height: 3rem;
+}
+
+
+/*side submenu*/
+.menu_second_image, .side_menu {
+    display: none;
+}
+
+.menu_line {
+    display: none;
+    border: #001cff solid 2px;
+    background-color: #001cff;
+    width: 80%;
+    margin-left: 5rem;
+}
+
+.side_menu {
+    width: 20rem;
+    position: absolute;
+    float: right;
+    right: 0;
+    z-index : 9999;
+}
+
+
+    .side_menu a:not(.side_menu_title) {
+        font-weight: lighter;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-family: 'DIN Light', Arial, sans-serif;
+    }
+
+    .side_menu .side_menu_title {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+.submenu {
+    list-style-type: none;
+}
+
+
+/*mobile submenu*/
+.industries_list {
+    width: 30rem;
+    color: #fff !important;
+    /*margin-left: 3rem;*/
+}
+
+    .industries_list ul li, .services_list ul li {
+        list-style: none;
+    }
+
+.mobile_submenu_links {
+    font-size: 1.7rem !important;
+}
+
+.services_list, .industries_list {
+    display: none;
+}
+
+@media only screen and (max-width: 992px) {
+   
+    .menu_open_image {
+        height: 25rem;
+    }
+
+    .drop_down a {
+        font-size: 2rem;
+    }
+
+    .side_menu a {
+        font-size: 18px !important;
+    }
+
+    .side_menu {
+/*        right: 30rem;
+*/        width: 25rem;
+    }
+}
+
+
+@media only screen and (max-width: 880px) {
+    .header_language_container p {
+        font-size : 1.5rem
+    }
+}
+
+    @media only screen and (max-width: 768px) {
+
+        .header_language_container {
+            display: none;
+        }
+
+        .menu_language_container {
+            display: block;
+        }
+            .menu_language_container .fa-website, .language_disabled {
+                font-size: 1.7rem !important;
+            }
+
+        .header_language_container_mobile {
+            /*display: block;*/
+            transition: 300ms;
+            /*margin-right: -5rem;*/
+            display: flex;
+            flex-direction: column;
+            line-height: 0;
+            position: relative;
+            /*top: 3rem;*/
+            cursor: pointer;
+        }
+
+        .carousel_item h3:nth-child(1) {
+            margin-bottom: 4rem!important;
+        }
+            /*.menu_content{*/
+            /*	display: none;*/
+            /*}*/
+            /*.mobile_menu_content{*/
+            /*	display: block;*/
+            /*	position: absolute;*/
+            /*	top: 22vh;*/
+            /*}*/
+            .menu_language_text {
+            display: block;
+            font-size : 1.5rem;
+            margin-left : 1rem;
+        }
+
+        .header_logo_container {
+            width: 12rem;
+        }
+
+        .kanda_logo {
+            margin: 3rem 0 0 6.5rem;
+            width: 25rem;
+        }
+        /*.menu-title{*/
+        /*	color: #fff!important;*/
+        /*}*/
+
+        .second_logo {
+            width: 8rem !important;
+        }
+
+        #fixed_menu .kanda_logo {
+            margin: 3rem 0 0 8.5rem;
+        }
+
+        .menu_button {
+            margin-top: 4rem;
+        }
+
+        #fixed_menu .menu_button {
+            margin-top: 3rem;
+        }
+
+        .drop_down li {
+            margin-bottom: .5rem;
+        }
+
+        .join_us_magnifier {
+            margin-top: 4rem;
+        }
+
+        .second_logo {
+            margin: 2rem 0 0 6.5rem !important;
+        }
+
+        .menu_open_image {
+            margin-top: 7rem;
+            height: 22rem;
+        }
+
+        .drop_down a {
+            font-size: 2.1rem;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        .header_language_container {
+            opacity: 0;
+        }
+
+        .kanda_logo {
+            width: 20rem;
+            margin-left: 3rem;
+        }
+
+        .second_logo {
+            margin: 3rem 0 0 3rem !important;
+            width: 5rem !important;
+        }
+
+        .menu_button {
+            margin: 3.5rem 3rem 0rem 0rem;
+        }
+
+        .join_us_magnifier {
+            margin: 3.4rem 2rem 0rem 0rem;
+        }
+
+            .join_us_magnifier:not(#top_join_us_magnifier) {
+                margin: 4rem 2rem 0rem 0rem
+            }
+
+        /*.menu_open_image, .menu_back_image, .side_menu, .menu_line {*/
+        /*	display: none!important;*/
+        /*}*/
+        /*.menu-title{*/
+        /*	color: #fff!important;*/
+        /*}*/
+
+
+        .drop_down {
+            margin-top: 84px;
+            padding-left: 4rem;
+
+        }
+        #sideMenu .drop_down {
+            padding-left: 0rem !important;
+        }
+
+        .side_menu a {
+            font-size: 16px !important;
+        }
+
+        #fixed_menu .kanda_logo {
+            margin: 3rem 0rem 0rem 5rem;
+        }
+
+        #fixed_menu .menu_button {
+            margin: 2.5rem 3.8rem 0rem 0rem;
+        }
+
+        #fixed_menu .join_us_magnifier {
+            margin: 3.4rem 1rem 0rem 0rem;
+        }
+
+        .menu_language_text {
+            display: block;
+            color: white;
+            vertical-align: bottom;
+            color: #fff;
+            padding: 0.5rem 0.2rem;
+            /*font-size: 1.6rem;*/
+            font-size: 1.5rem;
+/*            margin-left: 1rem;
+*/            cursor: default;
+            position: relative;
+            top: 0.2rem;
+/*            font-weight: 700;
+*//*            font-family: 'DINNextLTPro-Bold', 'Arial', sans-serif; */
+            font-family : 'DINNextLTPro-Regular', 'Segoe UI', 'Tahoma', sans-serif;
+       }
+
+        .mobile_back_img {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .join_us_magnifier {
+            display: none;
+        }
+
+        .drop_down a {
+            font-size: 2.3rem;
+        }
+
+        .menu_language_container {
+            margin-left: 1rem;
+        }
+
+            .menu_language_container .fa-website, .language_disabled {
+                font-size: 1.7rem !important;
+            }
+
+        #fixed_menu .aparat, #aparat {
+            content: url(../../images/aparat_white.svg);
+            position: relative;
+            top: 0.4rem;
+            width: 2.5rem;
+            height: 3rem;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .menu_content {
+            display: none;
+        }
+
+        .mobile_menu_content {
+            display: block;
+            position: absolute;
+            top: 22vh;
+        }
+    }
+
+    @media only screen and (max-width: 365px) {
+        .header_logo_container {
+            margin: 0;
+            width: 10px !important;
+        }
+
+        .kanda_logo {
+            width: 20rem;
+            margin-left: 2rem;
+        }
+
+        .menu_button {
+            margin: 3.5rem 2rem 0rem 0rem;
+        }
+
+        .header_menu_container {
+            margin-right: 5px;
+        }
+
+        #fixed_menu .menu_button {
+            margin: 3rem 3rem 0rem 0rem !important;
+        }
+
+        #fixed_menu .kanda_logo {
+            margin: 3rem 0rem 0rem 4rem !important;
+        }
+
+        .menu_open_image {
+            height: 11rem;
+            margin-top: 5.5rem;
+        }
+
+        .drop_down {
+            margin-top: 0rem;
+        }
+
+            .drop_down a {
+                font-size: 2rem;
+            }
+
+        .social_media_container {
+            margin-top: 1rem;
+            margin-left: 3rem;
+        }
+
+            .social_media_container a:not(.fa-website, .language_disabled) {
+                font-size: 2rem;
+                color: #fff;
+                display: flex;
+                text-decoration: none;
+            }
+    }
+
+    @media only screen and (max-width: 300px) {
+        .menu_button {
+            margin: 3rem 1rem 0rem 0rem;
+        }
+
+        #fixed_menu .menu_button {
+            width: 3.5rem;
+        }
+
+        .kanda_logo {
+            min-width: 15rem;
+            width: 15rem;
+        }
+    }
+
+    @media only screen and (max-height: 580px) {
+        .social_media_container {
+            bottom: -14px;
+        }
+
+       
+    }

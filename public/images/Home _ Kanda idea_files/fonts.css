@@ -1,0 +1,110 @@
+/*
+
+	You can import your fonts in this file
+
+*/
+
+@font-face {
+	font-family: 'DINNextLTPro-Black';
+	src: url('../fonts/DINNextLTPro-Black.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-BlackCondensed';
+	src: url('../fonts/DINNextLTPro-BlackCondensed.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-BlackItalic';
+	src: url('../fonts/DINNextLTPro-BlackItalic.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Bold';
+	src: url('../fonts/DINNextLTPro-Bold.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-BoldCondensed';
+	src: url('../fonts/DINNextLTPro-BoldCondensed.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-BoldItalic';
+	src: url('../fonts/DINNextLTPro-BoldItalic.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Condensed';
+	src: url('../fonts/DINNextLTPro-Condensed.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Heavy';
+	src: url('../fonts/DINNextLTPro-Heavy.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-HeavyCondensed';
+	src: url('../fonts/DINNextLTPro-HeavyCondensed.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-HeavyItalic';
+	src: url('../fonts/DINNextLTPro-HeavyItalic.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Italic';
+	src: url('../fonts/DINNextLTPro-Italic.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Light';
+	src: url('../fonts/DINNextLTPro-Light.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-LightCondensed';
+	src: url('../fonts/DINNextLTPro-LightCondensed.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-LightItalic';
+	src: url('../fonts/DINNextLTPro-LightItalic.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Medium';
+	src: url('../fonts/DINNextLTPro-Medium.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-MediumCond';
+	src: url('../fonts/DINNextLTPro-MediumCond.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-MediumItalic';
+	src: url('../fonts/DINNextLTPro-MediumItalic.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-Regular';
+	src: url('../fonts/DINNextLTPro-Regular.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-UltraLight';
+	src: url('../fonts/DINNextLTPro-UltraLight.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-UltraLightCond';
+	src: url('../fonts/DINNextLTPro-UltraLightCond.ttf') format('truetype')
+}
+
+@font-face {
+	font-family: 'DINNextLTPro-UltraLightIt';
+	src: url('../fonts/DINNextLTPro-UltraLightIt.ttf') format('truetype')
+}

@@ -1,0 +1,10 @@
+$(function(){
+	//Go to top of the page on clicking certain footer elements
+	$(`.footer_arrow_up,
+		 .footer-home-icon`).click(function(event) {
+		event.preventDefault();
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
+	});
+});

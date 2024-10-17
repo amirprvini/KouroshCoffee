@@ -1,0 +1,93 @@
+/*
+
+This file has been made to standardize our website
+with this, we will have constinstancy throughout 
+the project.
+
+*/
+
+/* Default Font Styles / Fallbacks / Sizes */
+
+body {
+	font-family: 'DINNextLTPro-Regular', 'Segoe UI', 'Tahoma', sans-serif;
+}
+
+h1 {
+	font-size: 6.104rem;
+}
+
+h2 {
+	font-size: 4.882rem;
+}
+
+h3 {
+	font-size: 3.906rem;
+}
+
+h4 {
+	font-size: 3.126rem;
+}
+
+h5 {
+	font-size: 2.5rem;
+}
+
+p, a, article {
+	font-size: 2rem;
+}
+
+small {
+	font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5 {
+	line-height: 1.3;
+}
+
+body {
+	line-height: 1.5;
+}
+
+/* General Rule Classes */
+.align_right {
+	text-align: right !important;
+}
+
+/* Standard Font Style Classes */
+
+.KND-font-black {
+	font-family: 'DINNextLTPro-Black', 'Segoe UI', 'Tahoma', sans-serif !important;
+}
+
+.KND-font-bold {
+	font-family: 'DINNextLTPro-Bold', 'Segoe UI', 'Tahoma', sans-serif !important;
+}
+
+.KND-font-blacker {
+	font-family: 'DINNextLTPro-BlackCondensed', 'Segoe UI', 'Tahoma', sans-serif !important;
+}
+
+.KND-font-bolder {
+	font-family: 'DINNextLTPro-BoldCondensed', 'Segoe UI', 'Tahoma', sans-serif !important;
+	;
+}
+
+.KND-font-light {
+	font-family: 'DINNextLTPro-Light', 'Segoe UI', 'Tahoma', sans-serif !important;
+	;
+}
+
+.KND-font-medium {
+	font-family: 'DINNextLTPro-Medium', 'Segoe UI', 'Tahoma', sans-serif !important;
+	;
+}
+
+.KND-font-regular {
+	font-family: 'DINNextLTPro-Regular', 'Segoe UI', 'Tahoma', sans-serif !important;
+	;
+}
+
+.KND-font-thin {
+	font-family: 'DINNextLTPro-UltraLight', 'Segoe UI', 'Tahoma', sans-serif !important;
+	;
+}

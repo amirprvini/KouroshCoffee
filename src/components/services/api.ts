@@ -21,5 +21,6 @@ export async function getProductById (id:string) {
 //--------------------------- User ---------------------------//
 
 export async function getUsers () {
-    
+    const {data} = await client.get('/user');
+    return data
 }

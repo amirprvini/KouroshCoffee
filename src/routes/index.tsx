@@ -3,13 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LayOut from '../components/Layout'
 import HomePage from '../pages/HomePage'
 import OrderPage from '../pages/OrderPage'
-import ProductsPage from '../pages/AllProductsPage'
 import EventsPage from '../pages/EventsPage'
 import AboutPage from '../pages/AboutPage'
 import ContactPage from '../pages/ContactPage'
 import AllProductsPage from '../pages/AllProductsPage'
 import ProductPage from '../pages/ProductPage'
-import LoginPage from '../pages/LoginPage'
+import { LoginPage } from '../pages/LoginPage'
 
 
 export const AppContext = createContext<any>({})
@@ -33,7 +32,7 @@ const RouteProvider: React.FC<RouteProviderPros> = ():JSX.Element => {
                 <Route path='/products/:id' element={<ProductPage/>} />
                 <Route path='/events' element={<EventsPage/>} />
                 <Route path='/about' element={<AboutPage/>} />
-                <Route path='/login'  element={<LoginPage/>} />
+                <Route path='/login'  element={<LoginPage /> } />
                 <Route path='/contact' element={<ContactPage/>} />
             </Route>
         </Routes>

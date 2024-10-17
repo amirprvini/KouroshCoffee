@@ -1,0 +1,212 @@
+/*
+    Code responsible for the header's behavior
+*/
+
+$(function () {
+    let menuStatus = false;
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Menu Button Click Handler
+    $(`.menu_button_link,
+    .menu_open_text,
+    .menu_back_image`).click(function (event) {
+        event.preventDefault();
+        if (menuStatus == false) {
+            $('#fixed_menu').css('display', 'block');
+            menuStatus = true;
+
+            $('#header2, #header3').css('display', 'none');
+
+            //Disable Scrolling
+            disableScrolling();
+
+            $('body').css('margin', '0');
+        } else {
+            $('#fixed_menu').css('display', 'none');
+
+            $('#header2, #header3').css('display', 'flex');
+
+            menuStatus = false;
+
+            enableScrolling();
+
+            $('body').css('margin', '0 auto');
+        }
+    });
+
+
+    //Functions
+
+    //Disable page scroll
+    function disableScrolling() {
+        var x = window.scrollX;
+        var y = window.scrollY;
+        window.onscroll = function () {
+            window.scrollTo(x, y);
+        };
+
+        $('html').addClass('hide-scrollbar');
+    }
+
+    //Enable page scroll
+    function enableScrolling() {
+        window.onscroll = function () {
+        };
+
+        $('html').removeClass('hide-scrollbar');
+    }
+});
+
+
+// side submenu
+//industries list
+$("#industries_link").click(function () {
+    $('#menu_back_image , #industries_line, .side_menu , #services_link').css('display', 'block');
+    $('#menu_open_image , #industries_link,  #services_line').css('display', 'none');
+    $('.menu-title').css('color', '#001cff');
+
+
+    //set content
+    $('.side_menu_title').html('INDUSTRIES');
+    $('#menu_item1').html('Maritime');
+    $('#menu_item2').html('Oil & Gas');
+    $('#menu_item3').html('Communication');
+    $('#menu_item4').html('Agriculture');
+    $('#menu_item5').html('Roads & Cities');
+    $('#menu_item6').html('IT Infrastructure');
+
+    //set UrlS
+    $('.side_menu_title').attr('href', '/EN/Industries');
+    $('#menu_item1').attr('href', '/EN/Industries#1');
+    $('#menu_item2').attr('href', '/EN/Industries#2');
+    $('#menu_item3').attr('href', '/EN/Industries#3');
+    $('#menu_item4').attr('href', '/EN/Industries#4');
+    $('#menu_item5').attr('href', '/EN/Industries#5');
+    $('#menu_item6').attr('href', '/EN/Industries#6');
+
+});
+
+//service list
+$("#services_link").click(function () {
+    $('#menu_back_image , #services_line, .side_menu , #industries_link').css('display', 'block');
+    $('#menu_open_image , #services_link, #industries_line').css('display', 'none');
+    $('.menu-title').css('color', '#001cff');
+
+    //set content
+    $('.side_menu_title').html('SERVICES');
+    $('#menu_item1').text('Data Providing');
+    $('#menu_item2').html('Data Engineering');
+    $('#menu_item3').html('Engineering Design');
+    $('#menu_item4').html('GIS & Geomatic');
+    $('#menu_item5 , #menu_item6').html('');
+
+    //set UrlS
+    $('.side_menu_title').attr('href', '/EN/Service');
+    $('#menu_item1').attr('href', '/EN/Service#1');
+    $('#menu_item2').attr('href', '/EN/Service#2');
+    $('#menu_item3').attr('href', '/EN/Service#3');
+    $('#menu_item4').attr('href', '/EN/Service#4');
+
+});
+
+//back to default
+$(".menu_button").click(function () {
+    $("#menu_button").toggleClass("open");
+    $('#menu_back_image , #services_line, .side_menu , #industries_line').css('display', 'none');
+    $('#menu_open_image , #services_link, #industries_link').css('display', 'block');
+    $('.menu-title').css('color', '#fff');
+});
+
+
+
+//mobile menu
+var industries = [
+    set1 = ['Maritime', 'Oil & Gas', 'Communication', 'Agriculture', 'Roads & Cities', 'IT Infrastructure']
+];
+
+var services = [
+    set1 = ['Data Providing', 'Data Engineering', 'Engineering Design', 'GIS & Geomatic']
+];
+
+function makeUL(array) {
+    // Create the list element:
+    var list = document.createElement('ul');
+    for (var i = 0; i < array.length; i++) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.appendChild(document.createTextNode(array[i]));
+        a.setAttribute("class", "mobile_submenu_links");
+        li.appendChild(a);
+        li.setAttribute("class", "mobile_submenu_items");
+        list.appendChild(li);
+        console.log(li);
+    }
+    return list;
+}
+
+document.getElementById('services_list').appendChild(makeUL(services[0]));
+document.getElementById('industries_list').appendChild(makeUL(industries[0]));
+
+
+//set the list of industries submenu
+$("#mobile_industries_link").click(function () {
+    var state = document.getElementById('services_list').classList.toString();
+    var expand = document.getElementById('industries_list').classList.toString();
+    if (expand.includes("expanded")) {
+        console.log("includes expanded")
+    }
+    else {
+        if (state.includes("expanded")) {
+            document.getElementById('services_list').classList.remove("expanded");
+            $('#services_list').css('display', 'none');
+        }
+        $('#industries_list').css('display', 'block');
+        document.getElementById('industries_list').classList.add("expanded");
+    }
+
+    $('.mobile_menu_content .drop_down').css('margin-top', '-3rem');
+    $('.mobile_menu_title').css('color', '#001cff');
+    $("#industries_list ul li:nth-child(1) a").attr("href", "/EN/Industries#1");
+    $("#industries_list ul li:nth-child(2) a").attr("href", "/EN/Industries#2");
+    $("#industries_list ul li:nth-child(3) a").attr("href", "/EN/Industries#3");
+    $("#industries_list ul li:nth-child(4) a").attr("href", "/EN/Industries#4");
+    $("#industries_list ul li:nth-child(5) a").attr("href", "/EN/Industries#5");
+    $("#industries_list ul li:nth-child(6) a").attr("href", "/EN/Industries#6");
+
+
+});
+
+//set the list of services submenu
+$("#mobile_services_link").click(function () {
+
+    $('#services_list').css('display', 'block');
+
+    var state = document.getElementById("industries_list").classList.toString();
+    var expand = document.getElementById('services_list').classList.toString();
+    if (expand.includes("expanded")) {
+        console.log("includes expanded");
+
+    }
+    else {
+        if (state.includes("expanded")) {
+            document.getElementById('industries_list').classList.remove("expanded");
+            document.getElementById('services_list').classList.add("expanded");
+            $('#industries_list').css('display', 'none');
+
+        }
+        $('#services_list').css('display', 'block');
+        document.getElementById('services_list').classList.add("expanded");
+        document.getElementById('services_list').classList.add("open");
+    }
+
+    $('.mobile_menu_title').css('color', '#001cff');
+    $('.mobile_menu_content .drop_down').css('margin-top', '-3rem');
+
+    $("#services_list ul li:nth-child(1) a").attr("href", "/EN/Service#1");
+    $("#services_list ul li:nth-child(2) a").attr("href", "/EN/Service#2");
+    $("#services_list ul li:nth-child(3) a").attr("href", "/EN/Service#3");
+    $("#services_list ul li:nth-child(4) a").attr("href", "/EN/Service#4");
+});
+
+
